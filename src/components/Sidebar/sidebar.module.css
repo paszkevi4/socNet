@@ -1,0 +1,16 @@
+sidebar {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background: #ef4983;
+  padding: 25px;
+}
+.item a {
+	color: white;
+	text-decoration: none;
+}
+.item a.active {
+	color: yellow;
+	font-weight: bold;
+}

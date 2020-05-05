@@ -1,0 +1,85 @@
+$fontSize: 2vw
+$loginCover: url(./../../images/loginCover.svg)
+
+.container
+  height: 100vh
+  width: 100vw
+  background: $loginCover
+  background-size: contain
+  background-repeat: no-repeat
+  background-size: cover
+  position: relative
+
+.formContainer
+  position: relative
+  margin-left: 60%
+
+.loginForm
+  position: absolute
+  margin: 15vh auto 0 auto
+  background: pink
+  width: 45vh
+  height: 70vh
+  box-shadow: -2px 2px 5px grey
+  overflow: hidden
+
+  display: grid
+  grid-template-rows: 1fr 3fr 2fr
+.loginForm > div
+    text-align: center
+    margin: 2%
+
+.grid1
+  grid-row: 1/2
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+.grid2
+  grid-row: 2/3
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  div
+    margin: 0.25vh
+
+.grid3
+  grid-row: 3/-1
+  display: flex
+  justify-content: center
+  align-items: center
+
+loginRadio
+  display: flex
+  align-items: center
+  align-content: center
+.radio
+  margin-top: 5px
+  cursor: pointer
+  width: 1.5vw
+  height: 1.5vw
+label
+  padding-top: -5px
+  cursor: pointer
+  padding-left: 1vw
+.btn
+  background-color: rgb( 43, 153, 91 )
+  background-color: #ef4983
+  border: 1px solid rgb( 33, 126, 74 )
+  border: 1px solid pink
+  border-radius: 1%
+  height: 10vh
+  width: 80%
+.error
+  font-weight: bold
+  color: yellow
+.input
+  height: 5vh
+  width: 80%
+h3
+  padding: 3vh
+  font-size: 150%
+.captcha
+  img
+    width: 60%
+
+

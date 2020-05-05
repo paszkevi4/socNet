@@ -1,0 +1,24 @@
+sidebar
+  grid-column-start: 2
+  grid-column-end: 3
+  grid-row-start: 2
+  grid-row-end: 3
+  background: #ef4983
+  padding: 25px
+
+.item
+  a
+    color: white
+    text-decoration: none
+  .active
+    color: yellow
+    font-weight: bold
+@media screen and (max-width: 600px)
+  sidebar
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    grid-column-start: 1
+    grid-column-end: -1
+    grid-row-start: 2
+    grid-row-end: 3
