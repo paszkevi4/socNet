@@ -24,8 +24,14 @@ let ReduxMessageInput = reduxForm ({form: 'dialogInput'}) (MessageInput)
 
 let Dialogs = (props) => {
 
+	let userId = props.match.params.userId;
+
 	let dialogs = props.state.dialogsData.map ( el => <DialogItem id={el.id} name={el.name}/>)
-	let clouds = props.state.messagesData.map( el => <Message id={el.id} cloud={el.message}/>);
+
+	let clouds = null
+	if (userId) {
+		clouds = props.state.messagesData[userId].map( el => <Message id={el.id} cloud={el.message}/>)
+	}
 
 	const onSubmitDeclared = (values) => {
 		props.sendMessageAC (values.messageInput)
@@ -38,9 +44,9 @@ let Dialogs = (props) => {
 			</div>
 			<div className={css.messages}>
 				<ReduxMessageInput onSubmit={onSubmitDeclared}/>
-					<div className={css.dialog}>
-						{clouds}
-					</div>
+				<div className={css.dialog}>
+					{clouds}
+				</div>
 			</div>
 		</div>
 	)

@@ -5,6 +5,7 @@ import {updateMessageTextAC, setDialogsThunk} from './../../Redux/dialogsReducer
 import {connect} from 'react-redux';
 import {compose} from 'redux'
 import {withAuthRedirect} from '../../hoc/withAuthRedirect'
+import {withRouter} from "react-router-dom";
 
 let mapStateToProps = (state) => {
     return { state: state.dialogsPage }
@@ -12,7 +13,8 @@ let mapStateToProps = (state) => {
 
 const DialogsContainer = compose(
     //withAuthRedirect,
-    connect (mapStateToProps, {sendMessageAC, setDialogsThunk})
+    withRouter,
+    connect (mapStateToProps, {sendMessageAC, setDialogsThunk}),
 )(Dialogs)
 
 export default DialogsContainer;
