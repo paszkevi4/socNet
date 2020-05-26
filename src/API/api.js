@@ -1,7 +1,5 @@
 import * as axios from "axios";
-let apiKey1 = '64fb17f0-cb2e-44b0-bb13-ea1833967f3a'
-let apiKey2 = '64fb17f0-cb2e-44b0-bb13-ea1833967f3a'
-let apiKey3 = '64fb17f0-cb2e-44b0-bb13-ea1833967f3a'
+let apiKey1 = 'fed53842-a0be-49a9-add1-b5abc1ecc582'
 
 let instance = axios.create({
     withCredentials: true,
@@ -39,6 +37,15 @@ export const usersAPI = {
     updateProfileInfo (profile) {
         return instance.put('profile', profile)
             .then(response => response.data)
+    },
+    updatePhoto(photo) {
+        const formData = new FormData();
+        formData.append('image', photo);
+        return instance.put('profile/photo', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
     }
 }
 

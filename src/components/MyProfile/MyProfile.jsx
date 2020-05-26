@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 import css from './MyProfile.module.sass'
 import Avatar from "./../../images/defaultAvatar.svg"
 import Preloader from "./../common/Preloader/preloader"
 import Status from './../Profile/profileInfo/statusNew'
-import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom"
+
+import {usersAPI} from "../../API/api"
 
 const MyProfile = (props) => {
     if (!props.profile) {
@@ -11,6 +13,7 @@ const MyProfile = (props) => {
     }
 
     let onPhotoAdded = (event) => {
+        usersAPI.updatePhoto(event.target.files[0])
         console.log(event.target.files[0])
     }
 

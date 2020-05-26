@@ -3,17 +3,17 @@ import sass from './posts.module.sass'
 
 let Post = (props) => {
 
-	let [likesCount, setLikes] = useState(props.likes)
+	let [liked, setLiked] = useState(false)
 
-	const liked = () => {
-		setLikes(++likesCount)
+	const like = () => {
+		setLiked(!liked)
 	}
 
 	return (
 		<div className={sass.item}>
 			<div className={sass.name}>{props.name}</div>
 			<div className={sass.text}>{props.text}</div>
-			<div className={sass.likes} onClick={liked}>Likes {likesCount}</div>
+			<div className={sass.likes} onClick={like}>Likes {liked ? props.likes +1 : props.likes}</div>
 
 		</div>
 	)

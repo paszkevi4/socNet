@@ -57,14 +57,17 @@ let initialState = {
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SEND-MESSAGE':
-            let idCount = state.messagesData.length + 1;
+            let idCount = state.messagesData.id2.length + 1;
             let newMessage = {
                 id: idCount,
                 message: action.text,
             };
+            let abc = [state.messagesData.id2, newMessage]
             return {
                 ...state,
-                messagesData: [...state.messagesData, newMessage],
+                ...state.messagesData,
+                id2: [...state.messagesData.id2, newMessage]
+                //messagesData: [state.messagesData, [...state.messagesData.id2, newMessage]],
             }
         case 'SET_DIALOGS_DATA':
             return {

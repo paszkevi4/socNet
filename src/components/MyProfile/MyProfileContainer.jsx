@@ -17,6 +17,8 @@ import {loggedOutThunk} from "../../Redux/authReducer";
 import Header from "../Header/header";
 
 
+
+
 class MyProfileContainer extends React.Component {
 
 
