@@ -6,7 +6,7 @@ import s from './loginPage.module.sass'
 import {loggedInThunk} from './../../Redux/authReducer'
 import { connect } from 'react-redux'
 import {required} from '../common/fields/validators'
-import {Textarea, Input} from '../common/fields/fields'
+import { Input } from '../common/fields/fields'
 
 import {getIsAuth,
         getUserId,
@@ -15,6 +15,11 @@ import {getIsAuth,
 const LoginForm = (props) => {
     return (
         <div className={s.container}>
+            <div className={s.loginTip}>
+                <span><p>Feel free to use my login data in case you want to check out SocNet.</p><p>Also feel fre to add or change smth</p></span><br />
+                <span><p>Login:</p><p>pashka6995@gmail.com</p></span><br />
+                <span><p>Password:</p><p>qwe123rty</p></span>
+            </div>
             <div className={s.formContainer}>
                 <form className={s.loginForm} onSubmit={props.handleSubmit}>
                         <div className={s.grid1}>
