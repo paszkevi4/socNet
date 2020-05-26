@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1ad2c37920fb879682d8d19ba3554fda",
+    "revision": "40b76593b8479f7c82fa0012c954e826",
     "url": "/socNet/index.html"
   },
   {
-    "revision": "925b50ee44b31f79d68e",
+    "revision": "7b392bafafa1b49b26c3",
     "url": "/socNet/static/css/main.9a61d29f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/socNet/static/js/2.4332ef38.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "925b50ee44b31f79d68e",
-    "url": "/socNet/static/js/main.72809630.chunk.js"
+    "revision": "7b392bafafa1b49b26c3",
+    "url": "/socNet/static/js/main.5ff14d16.chunk.js"
   },
   {
     "revision": "76f07ab24c8d750816eb",
