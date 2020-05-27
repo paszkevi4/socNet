@@ -13,6 +13,7 @@ let initialState = {
     dialogsData1: [
         {name: 'John', text: 'Its my first post!', likes: 25,},
     ],
+    currentDialog: 'id2',
     messagesData: {
             id2: [
                 {id: 1, message: 'Hi!'},
@@ -56,18 +57,43 @@ let initialState = {
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'SEND-MESSAGE':
+        /*case 'SEND-MESSAGE':
             let idCount = state.messagesData.id2.length + 1;
             let newMessage = {
                 id: idCount,
                 message: action.text,
             };
-            let abc = [state.messagesData.id2, newMessage]
+            let abc = [...state.messagesData.id2, newMessage]
+            let id2 = abc
             return {
                 ...state,
-                ...state.messagesData,
-                id2: [...state.messagesData.id2, newMessage]
-                //messagesData: [state.messagesData, [...state.messagesData.id2, newMessage]],
+                dialogsData: [...state.dialogsData],
+                dialogsData1: [...state.dialogsData1],
+                messagesData: {...state.messagesData, id2: abc },
+                //id2: [...state.messagesData.id2, newMessage]
+            }*/
+        case 'SEND-MESSAGE':
+            let idCount = state.messagesData[state.currentDialog].length + 1;
+            let newMessage = {
+                id: idCount,
+                message: action.text,
+            };
+            let abc = [...state.messagesData[state.currentDialog], newMessage]
+            let id2 = abc
+            for (let key in state.messagesData) {
+                if (key == state.currentDialog) {
+                    return {
+                        ...state,
+                        dialogsData: [...state.dialogsData],
+                        dialogsData1: [...state.dialogsData1],
+                        messagesData: {...state.messagesData, [key]: abc},
+                    }
+                }
+            }
+        case 'SET_CURRENT_DIALOG':
+            return {
+                ...state,
+                currentDialog: action.id,
             }
         case 'SET_DIALOGS_DATA':
             return {
@@ -81,6 +107,7 @@ const dialogsReducer = (state = initialState, action) => {
 }
 
 export const sendMessageAC = (text) => ({ type: 'SEND-MESSAGE', text })
+export const setCurrentDialogAC = (id) => ({ type: 'SET_CURRENT_DIALOG', id })
 export const setDialogsDataAC = (profile) => ({type: 'SET_DIALOGS_DATA', profile: profile })
 
 export const setDialogsThunk = (userId) => {

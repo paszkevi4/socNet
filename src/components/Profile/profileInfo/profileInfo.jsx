@@ -1,4 +1,4 @@
-import React, {useState, setState} from 'react'
+import React, { useState } from 'react'
 import sass from './profileInfo.module.sass'
 import Preloader from "./../../common/Preloader/preloader"
 import Status from './statusNew'

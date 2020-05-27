@@ -14,8 +14,8 @@ import {sendMessageAC, setDialogsThunk} from "../../Redux/dialogsReducer";
 let MessageInput = (props) => {
 	return (
 		<form onSubmit={props.handleSubmit}>
-			<Field placeholder={'Message'} component={Textarea}
-				   name={'messageInput'} validate={[required]}></Field>
+			<Field placeholder={'Message'} component={Textarea} onChange={props.changeValue}
+				   name={'messageInput'} validate={[required]} value={props.messageValue} ></Field>
 			<button>Submit</button>
 		</form>
 	)
@@ -43,7 +43,7 @@ let Dialogs = (props) => {
 				{dialogs}
 			</div>
 			<div className={css.messages}>
-				<ReduxMessageInput onSubmit={onSubmitDeclared}/>
+				<ReduxMessageInput onSubmit={onSubmitDeclared} />
 				<div className={css.dialog}>
 					{clouds}
 				</div>

@@ -1,4 +1,4 @@
-import {usersAPI, moviesAPI} from "../API/api";
+import { usersAPI } from "../API/api";
 
 let initialState = {
     users: [],
@@ -78,7 +78,7 @@ export const follow = (uId) => {
     return (dispatch) => {
         usersAPI.followAPI(uId)
             .then (data => {
-                if (data.resultCode == 0) {
+                if (data.resultCode === 0) {
                     dispatch (followAC(uId) )
                 }
             })
@@ -88,7 +88,7 @@ export const unfollow = (uId) => {
     return (dispatch) => {
         usersAPI.unfollowAPI(uId)
             .then (data => {
-                if (data.resultCode == 0) {
+                if (data.resultCode === 0) {
                     dispatch (unfollowAC(uId) )
                 }
             })
