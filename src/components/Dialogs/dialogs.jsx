@@ -29,12 +29,12 @@ let Dialogs = (props) => {
 	let dialogs = props.state.dialogsData.map ( el => <DialogItem id={el.id} name={el.name}/>)
 
 	let clouds = null
-	if (userId) {
-		clouds = props.state.messagesData[userId].map( el => <Message id={el.id} cloud={el.message}/>)
+	if (userId && props.state.messagesData[userId]) {
+		clouds = props.state.messagesData[userId].map( el => <Message id={el.id} cloud={el.message} senderId={el.senderId}/>)
 	}
 
-	const onSubmitDeclared = (values) => {
-		props.sendMessageAC (values.messageInput)
+	const onSubmitDeclared = (values, senderId) => {
+		props.sendMessageAC (values.messageInput, props.senderId)
 	}
 
 	return (

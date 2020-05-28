@@ -5,9 +5,10 @@ const Message = (props) => {
 	return (
 		<div className={sass.message}>
 			<span className={`${sass.messageSpan} 
-			${props.id === 2 && sass.odd} 
-			${props.id > 5 && sass.odd}`}>{props.cloud}</span>
-			{/*{ + ' id' + props.id}*/}
+			${props.senderId === (6846 || 1079) && sass.odd}
+			/*IDs are hard coded above b/c of a test account*/
+			`}>{props.cloud}</span>
+
 		</div>
 	)
 }

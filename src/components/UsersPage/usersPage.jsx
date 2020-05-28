@@ -70,6 +70,11 @@ let UsersPage = (props) => {
                                 }}>follow</button>
                             </div>
                         }
+                        <NavLink to={'/dialogs/id' +u.id}>
+                            <div className={css.btn}>
+                                <button className={css.follow} >Message</button>
+                            </div>
+                        </NavLink>
                         <div className={css.nameStatus}>
                             <div>{u.name}</div>
                             <div>{u.status || 'No status'}</div>

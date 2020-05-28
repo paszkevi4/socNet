@@ -16,41 +16,41 @@ let initialState = {
     currentDialog: 'id2',
     messagesData: {
             id2: [
-                {id: 1, message: 'Hi!'},
-                {id: 2, message: 'How is it going?'},
-                {id: 3, message: 'Yo'},
-                {id: 4, message: 'Yo'},
-                {id: 5, message: 'Yo'},
+                {id: 1, message: 'Hi!', senderId: 2 },
+                {id: 2, message: 'How is it going?', senderId: 6846 },
+                {id: 3, message: 'Yo', senderId: 2 },
+                {id: 4, message: 'Yo', senderId: 2 },
+                {id: 5, message: 'Yo', senderId: 2 },
             ],
             id3: [
-                {id: 1, message: 'Ok, Siri, what is the weather like today?'},
-                {id: 2, message: 'Not even funny'},
-                {id: 3, message: 'Yo'},
+                {id: 1, message: 'Ok, Siri, what is the weather like today?', senderId: 3 },
+                {id: 2, message: 'Not even funny', senderId: 6846 },
+                {id: 3, message: 'Yo', senderId: 3 },
             ],
             id4: [
-                {id: 1, message: 'Hello, my friend!'},
-                {id: 2, message: 'How are you?'},
-                {id: 3, message: 'Im good. And how are you?'},
-                {id: 4, message: 'Perfecto mio amico'},
+                {id: 1, message: 'Hello, my friend!', senderId: 4 },
+                {id: 2, message: 'How are you?', senderId: 6846 },
+                {id: 3, message: 'Im good. And how are you?', senderId: 4 },
+                {id: 4, message: 'Perfecto mio amico', senderId: 4 },
             ],
             id5: [
-                {id: 1, message: 'Greetings!'},
-                {id: 2, message: 'How is it going?'},
-                {id: 3, message: 'Back from Scotland'},
-                {id: 4, message: 'Thats incredible!'},
+                {id: 1, message: 'Greetings!', senderId: 5 },
+                {id: 2, message: 'How is it going?', senderId: 6846 },
+                {id: 3, message: 'Back from Scotland', senderId: 5 },
+                {id: 4, message: 'Thats incredible!', senderId: 5 },
             ],
             id7: [
-                {id: 1, message: 'Hello!'},
-                {id: 2, message: 'How are you?'},
-                {id: 3, message: 'Yo'},
-                {id: 4, message: 'Whats up?'},
+                {id: 1, message: 'Hello!', senderId: 7 },
+                {id: 2, message: 'How are you?', senderId: 6846 },
+                {id: 3, message: 'Yo', senderId: 7 },
+                {id: 4, message: 'Whats up?', senderId: 7 },
             ],
             id8: [
-                {id: 1, message: 'Konichiva!'},
-                {id: 2, message: 'How is it going?'},
-                {id: 3, message: 'Namaste'},
-                {id: 4, message: 'Namaste'},
-                {id: 5, message: 'Namaste'},
+                {id: 1, message: 'Konichiva!', senderId: 8 },
+                {id: 2, message: 'How is it going?', senderId: 6846 },
+                {id: 3, message: 'Namaste', senderId: 8 },
+                {id: 4, message: 'Namaste', senderId: 8 },
+                {id: 5, message: 'Namaste', senderId: 8 },
             ],
         },
 };
@@ -77,6 +77,7 @@ const dialogsReducer = (state = initialState, action) => {
             let newMessage = {
                 id: idCount,
                 message: action.text,
+                senderId: action.userId
             };
             let abc = [...state.messagesData[state.currentDialog], newMessage]
             let id2 = abc
@@ -106,7 +107,7 @@ const dialogsReducer = (state = initialState, action) => {
 
 }
 
-export const sendMessageAC = (text) => ({ type: 'SEND-MESSAGE', text })
+export const sendMessageAC = (text, userId) => ({ type: 'SEND-MESSAGE', text, userId })
 export const setCurrentDialogAC = (id) => ({ type: 'SET_CURRENT_DIALOG', id })
 export const setDialogsDataAC = (profile) => ({type: 'SET_DIALOGS_DATA', profile: profile })
 

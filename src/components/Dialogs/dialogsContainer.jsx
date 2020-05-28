@@ -11,14 +11,14 @@ import Profile from "../Profile/profile";
 class DialogsContainerInner extends React.Component {
 
     componentDidMount() {
-        let userId = this.props.match.params.userId;
-        this.props.setCurrentDialogAC(userId);
+        let dialogId = this.props.match.params.userId;
+        this.props.setCurrentDialogAC(dialogId);
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.userId != this.props.match.params.userId) {
-            let userId = this.props.match.params.userId;
-            this.props.setCurrentDialogAC(userId);
+            let dialogId = this.props.match.params.userId;
+            this.props.setCurrentDialogAC(dialogId);
         }
     }
 
@@ -30,9 +30,10 @@ class DialogsContainerInner extends React.Component {
 }
 
 
-let mapStateToProps = (state) => {
-    return { state: state.dialogsPage }
-}
+let mapStateToProps = (state) => ({
+    state: state.dialogsPage,
+    senderId: state.auth.userId
+})
 
 const DialogsContainer = compose(
     //withAuthRedirect,
