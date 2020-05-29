@@ -8,6 +8,9 @@ import s from "../../Login/loginPage.module.sass";
 import {Input} from "../../common/fields/fields";
 import {NavLink} from "react-router-dom";
 
+import { TiSocialFacebook, TiSocialTwitter, TiSocialInstagram, TiSocialYoutube, TiSocialGithub, } from 'react-icons/ti'
+import { IoLogoVk, IoLogoOctocat, IoLogoTwitter, IoLogoYoutube, IoLogoInstagram, IoLogoFacebook, IoIosBriefcase, IoIosAt } from 'react-icons/io'
+
 
 const ProfileInfo = (props) => {
 
@@ -84,7 +87,14 @@ const Info = (props) => {
 }
 
 const Contacts = ({neededKey, value}) => {
-    return <div><b>{neededKey}: </b><p>{value}</p></div>
+    return <div><b>{neededKey == 'facebook' ? <IoLogoFacebook /> :
+        neededKey == 'website' ? <IoIosBriefcase /> :
+        neededKey == 'vk' ? <IoLogoVk /> :
+        neededKey == 'twitter' ? <IoLogoTwitter /> :
+        neededKey == 'instagram' ? <IoLogoInstagram /> :
+        neededKey == 'youtube' ? <IoLogoYoutube /> :
+        neededKey == 'github' ? <IoLogoOctocat /> :
+        neededKey == 'mainLink' ? <IoIosAt /> : neededKey }</b><p>{value}</p></div>
 }
 
 export default ProfileInfo;

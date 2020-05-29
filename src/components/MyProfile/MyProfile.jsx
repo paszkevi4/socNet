@@ -6,6 +6,7 @@ import Status from './../Profile/profileInfo/statusNew'
 import {NavLink} from "react-router-dom"
 
 import {usersAPI} from "../../API/api"
+import { TiArrowSortedDown, TiArrowDownThick } from 'react-icons/ti'
 
 const MyProfile = (props) => {
     if (!props.profile) {
@@ -21,7 +22,7 @@ const MyProfile = (props) => {
         <div className={css.content}>
             <div className={css.myprofile__button_logout}>
                 <div className={css.headerName}>
-                    V { props.profile.fullName }
+                    <TiArrowDownThick />{ props.profile.fullName }
                 </div>
                 <div className={css.menu}>
                     <NavLink to={'/profile/' +props.profile.userId} ><div>To my profile</div></NavLink>

@@ -4,6 +4,16 @@ import {Textarea, Input} from '../../common/fields/fields'
 import {Field, reduxForm} from 'redux-form'
 import s from "../../Login/loginPage.module.sass";
 import {required} from "../../common/fields/validators";
+import {
+    IoIosAt,
+    IoIosBriefcase,
+    IoLogoFacebook,
+    IoLogoInstagram,
+    IoLogoOctocat,
+    IoLogoTwitter,
+    IoLogoVk,
+    IoLogoYoutube
+} from "react-icons/io";
 
 const InfoForm = (props) => {
     return (
@@ -48,9 +58,16 @@ const InfoForm = (props) => {
 
 const Contacts = ({neededKey, value}) => {
     return <div>
-        <b>{neededKey}: </b>
+        <b>{neededKey == 'facebook' ? <IoLogoFacebook /> :
+            neededKey == 'website' ? <IoIosBriefcase /> :
+                neededKey == 'vk' ? <IoLogoVk /> :
+                    neededKey == 'twitter' ? <IoLogoTwitter /> :
+                        neededKey == 'instagram' ? <IoLogoInstagram /> :
+                            neededKey == 'youtube' ? <IoLogoYoutube /> :
+                                neededKey == 'github' ? <IoLogoOctocat /> :
+                                    neededKey == 'mainLink' ? <IoIosAt /> : neededKey }</b>
         <Field className={s.input} component={Input}
-               name={'contacts.' + neededKey} placeholder={neededKey}/>
+               name={'contacts.' + neededKey} placeholder={`enter your ${neededKey}`}/>
     </div>
 }
 
