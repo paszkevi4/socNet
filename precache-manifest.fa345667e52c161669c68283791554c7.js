@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "78636b3191b84643e7f2b4e064b5514d",
+    "revision": "44b20e9b8c480e2e462800db68d276b9",
     "url": "/socNet/index.html"
   },
   {
-    "revision": "9d9188e33038a24063a3",
+    "revision": "f5ffefe95f6c6f3d1678",
     "url": "/socNet/static/css/main.c03421fc.chunk.css"
   },
   {
-    "revision": "b9d1a4e353222d05d0a1",
-    "url": "/socNet/static/js/2.2dd4b327.chunk.js"
+    "revision": "faa368ca22d08e5ed18a",
+    "url": "/socNet/static/js/2.ebfda5b9.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/socNet/static/js/2.2dd4b327.chunk.js.LICENSE.txt"
+    "url": "/socNet/static/js/2.ebfda5b9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9d9188e33038a24063a3",
-    "url": "/socNet/static/js/main.d26f1400.chunk.js"
+    "revision": "f5ffefe95f6c6f3d1678",
+    "url": "/socNet/static/js/main.6e090a66.chunk.js"
   },
   {
     "revision": "76f07ab24c8d750816eb",
